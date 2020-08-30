@@ -110,19 +110,19 @@ function aesDecrypt(data, key) {
 	result = result.toString(cryptoJS.enc.Utf8);
 	return result;
 }
-
+//因为是公司项目，name的值我已经删掉
 function loginHeaders(){
 	return { 
-				'telo-origin-data': aesEncrypt({'name': 'nnsh_admin'},'telo-origin') ,
-				'telo-system-data': JSON.stringify({'name': 'nnsh_admin'})
+				'telo-origin-data': aesEncrypt({'name': ''},'telo-origin') ,
+				'telo-system-data': JSON.stringify({'name': ''})
 			}
 }
-
+//因为是公司项目，name的值我已经删掉
 function adminHeaders(){
 	let cookie =  userCookie()
 	
 	return {
-		'telo-origin-data': aesEncrypt({'name': 'nnsh_admin'}, 'telo-origin'),
+		'telo-origin-data': aesEncrypt({'name': ''}, 'telo-origin'),
 		'telo-auth-data': aesEncrypt(cookie, 'telo-auth')
 	}
 }
