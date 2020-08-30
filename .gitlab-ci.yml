@@ -1,0 +1,12 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  tags:
+    - sync
+  only:
+    - master
+  script:
+    - ssh root@172.17.0.1 "cd /srv/project/nnsh/admin.nnsh.com && git pull origin master && git pull origin --tags"
+    - ssh root@172.17.0.1 "cp -r /srv/project/nnsh/admin.nnsh.com/dist/. /srv/nginx/www/nnsh/admin.nnsh.com/"

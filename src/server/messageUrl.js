@@ -1,0 +1,43 @@
+const CONSTAPI = {
+	postMessage:{//发送验证码
+		url:"/sms/send_type/group",
+		method:"POST"
+	},
+	addMessage:{//创建验证码
+		url:'/sms/template',
+		method:'POST'
+	},
+	putMessage:{//更新短信模板
+		url:'/sms/template',
+		method:'PUT'
+	},
+	messageList:{//短信列表
+		url:'/sms/template/list/paging',
+		method:'GET'
+	},
+	deleteMessage:{//删除
+		url:'/sms/template',
+		method:'DELETE'
+	},
+	sendTask:{//发送短信
+		url:'/sms/send/task',
+		method:"POST"
+	},
+	addNeteaseApp:{//添加短信模板
+		url:'/netease/app',
+		method:"POST"
+	},
+	neteaseList:{//网易短信模板列表
+		url:'/netease/app/list/paging',
+		method:"GET"
+	},
+	putNetease:{//更新网易云信模板
+		url:'/netease/app',
+		method:'PUT'
+	},
+	deleteNetease:{
+		url:'/netease/app',
+		method:'DELETE'
+	}
+}
+export default CONSTAPI
